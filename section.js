@@ -7,6 +7,16 @@ class Section {
     this.next = null;
   }
 
+  equals(other) {
+    return this.x == other.x && this.y == other.y;
+  }
+
+  reset(x, y) {
+    this.next = null;
+    this.x = x;
+    this.y = y;
+  }
+
   addSection() {
     if (this.next) {
       this.next.addSection();

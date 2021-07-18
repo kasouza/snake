@@ -1,8 +1,11 @@
 class Fruit {
-  constructor(x, y, index) {
+  constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.index = index;
+  }
+
+  equals(other) {
+    return this.x == other.x && this.y == other.y;
   }
 
   collidedWith(snake) {
@@ -20,8 +23,12 @@ class Grid {
     this.fruits = [];
   }
 
+  reset() {
+    this.fruits = [];
+  }
+
   removeFruit(fruit) {
-    this.fruits.splice(fruit.index, 1);
+    this.fruits = this.fruits.filter(other => !fruit.equals(other));
   }
 
   randomFruity() {

@@ -1,5 +1,8 @@
 class Snake {
   constructor(x, y) {
+    this.startX = x;
+    this.startY = y;
+
     this.head = new Section(x, y, [1, 0]);
   }
 
@@ -21,6 +24,10 @@ class Snake {
     }
 
     return false;
+  }
+
+  reset() {
+    this.head.reset(this.startX, this.startY);
   }
 
   grow() {
