@@ -1,48 +1,48 @@
 class Snake {
-  constructor(x, y) {
-    this.startX = x;
-    this.startY = y;
+	constructor(x, y) {
+		this.startX = x;
+		this.startY = y;
 
-    this.head = new Section(x, y, [1, 0]);
-  }
+		this.head = new Section(x, y, [1, 0]);
+	}
 
-  hasLost() {
-    let next = this.head.next;
+	hasLost() {
+		let next = this.head.next;
 
-    // Has the snake hit the wall?
-    if (this.head.x < 0 || this.head.x > COLS - 1 ||
-        this.head.y < 0 || this.head.y > ROWS - 1) {
-      return true;
-    }
+		// Has the snake hit the wall?
+		if (this.head.x < 0 || this.head.x > COLS - 1 ||
+			this.head.y < 0 || this.head.y > ROWS - 1) {
+			return true;
+		}
 
-    while (next) {
-      // Has the snake hit itself?
-      if (this.head.x == next.x && this.head.y == next.y) {
-        return true;
-      }
-      next = next.next;
-    }
+		while (next) {
+			// Has the snake hit itself?
+			if (this.head.x == next.x && this.head.y == next.y) {
+				return true;
+			}
+			next = next.next;
+		}
 
-    return false;
-  }
+		return false;
+	}
 
-  reset() {
-    this.head.reset(this.startX, this.startY);
-  }
+	reset() {
+		this.head.reset(this.startX, this.startY);
+	}
 
-  grow() {
-    this.head.addSection();
-  }
+	grow() {
+		this.head.addSection();
+	}
 
-  changeDirection(direction) {
-    this.head.changeDirection(direction);
-  }
+	changeDirection(direction) {
+		this.head.changeDirection(direction);
+	}
 
-  update() {
-    this.head.update(this.direction);
-  }
+	update() {
+		this.head.update(this.direction);
+	}
 
-  show() {
-    this.head.show();
-  }
+	show() {
+		this.head.show();
+	}
 }
