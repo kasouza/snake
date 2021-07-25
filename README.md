@@ -9,7 +9,7 @@ I was bored... so I made this bad boy!
 # Play it yourself
 Firt, you'll need to download the code, you can `Download ZIP` or just `git clone` it.
 Then just open the `index.html` in your favorite browser!
-It should work just right for most browsers, but as I used `ES¨ for some stuff, older browsers may not support it.
+It should work just right for most browsers, but as I used `ES6` for some stuff, older browsers may not support it.
 
 # How to play!
 Use the `arrows` to move and `p` to pause.
